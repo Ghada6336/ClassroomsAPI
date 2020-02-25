@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'classes',
 
+    'classes',
+    'rest_framework',
     'crispy_forms',
 ]
 
@@ -75,7 +76,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'classrooms.wsgi.application'
 
+REST_FRAMEWORK = {
 
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+
+}
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
